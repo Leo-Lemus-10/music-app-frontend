@@ -1,9 +1,13 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router';
+import { Grid, Paper, Avatar } from '@material-ui/core';
+import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 
 
 
 const LoginPage = (props) => {
+
+    const paperStyle = {padding: 20, height: '70vh', width:280, margin: "20px auto"}
     
     let [badLogin, setBadLogin] = useState(false)
     let [name, setName] = useState("")
@@ -56,14 +60,22 @@ const LoginPage = (props) => {
     }
 
     return (
-        <div className="login-page-body">
-            <form onSubmit= {login}>
-                <input type="text" value= {name} onChange={handleNameChange} name= "loginInput"></input>
-                <input type="password" value= {password} onChange={handlePassChange} name= "passInput"></input>
-                <input type= "submit" value= "Submit"></input>
-            </form>
-            {badLogin ? <p>Username or Password is incorrect</p>: null}
-        </div>
+        // <div className="login-page-body">
+        //     <form onSubmit= {login}>
+        //         <input type="text" value= {name} onChange={handleNameChange} name= "loginInput"></input>
+        //         <input type="password" value= {password} onChange={handlePassChange} name= "passInput"></input>
+        //         <input type= "submit" value= "Submit"></input>
+        //     </form>
+        //     {badLogin ? <p>Username or Password is incorrect</p>: null}
+        // </div>
+        <Grid>
+            <Paper elevations={10} style={paperStyle}>
+            <Grid align='center'>
+                <Avatar><LockOutlinedIcon /></Avatar>
+                <h2>Login</h2>
+            </Grid>
+            </Paper>
+        </Grid>
     )
 }
 
