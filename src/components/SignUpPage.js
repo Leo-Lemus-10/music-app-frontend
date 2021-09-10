@@ -46,14 +46,24 @@ const SignUpPage = props => {
 
 
     return (
-        <div>
-            <form onSubmit= {signUp}>
-                <input type="text" value= {name} onChange={handleNameChange} name= "loginInput"></input>
-                <input type="text" value= {pic} onChange={handlePicChange} name= "picInput"></input>
-                <input type="password" value= {password} onChange={handlePassChange} name= "passInput"></input>
-                <input type= "submit" value= "Submit"></input>
-            </form>
-        </div>
+        // <div>
+        //     <form onSubmit= {signUp}>
+        //         <input type="text" value= {name} onChange={handleNameChange} name= "loginInput"></input>
+        //         <input type="text" value= {pic} onChange={handlePicChange} name= "picInput"></input>
+        //         <input type="password" value= {password} onChange={handlePassChange} name= "passInput"></input>
+        //         <input type= "submit" value= "Submit"></input>
+        //     </form>
+        // </div>
+        <Grid>
+        <Paper elevations={10} style={paperStyle}>
+        <Grid align='center'>
+            <Avatar style={avatarStyle}><LockOutlinedIcon /></Avatar>
+            <h2>Login</h2>
+        </Grid>
+        <TextField label='Username' placeholder='Enter Username' fullWidth required/>
+        <TextField label='Password' placeholder='Enter Password' type= 'password'fullWidth required/>
+        </Paper>
+    </Grid>
     )
 }
 
